@@ -14,12 +14,12 @@ const Login = () => {
           </Button>
         </div>
         <div className='mb-6'>
-          <div class='relative'>
-            <div class='absolute inset-0 flex items-center'>
-              <div class='w-full border-t'></div>
+          <div className='relative'>
+            <div className='absolute inset-0 flex items-center'>
+              <div className='w-full border-t'></div>
             </div>
-            <div class='relative flex justify-center text-sm'>
-              <span class='bg-white px-4 text-xs text-neutral-500'>OR</span>
+            <div className='relative flex justify-center text-sm'>
+              <span className='bg-white px-4 text-xs text-neutral-500'>OR</span>
             </div>
           </div>
         </div>
