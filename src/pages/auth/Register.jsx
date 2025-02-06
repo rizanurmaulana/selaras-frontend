@@ -44,7 +44,7 @@ const Register = () => {
         <div className='flex justify-center max-w-lg mb-6'>
           <p className='text-sm text-neutral-500'>
             By creating an account you agree with our Terms of Service, Privacy
-            Policy,
+            Policy.
           </p>
         </div>
         <div className='mb-6'>
@@ -54,8 +54,11 @@ const Register = () => {
         </div>
         <div className='flex justify-center max-w-lg mb-6'>
           <p className='text-sm text-neutral-500'>
-            Have an account?{' '}
-            <Link to='/auth/login' className='hover:text-neutral-900 font-medium'>
+            Already have an account?{' '}
+            <Link
+              to='/auth/login'
+              className='hover:text-neutral-900 font-medium hover:underline underline-offset-4'
+            >
               Sign In
             </Link>
           </p>
