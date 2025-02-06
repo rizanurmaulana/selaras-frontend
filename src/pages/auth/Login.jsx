@@ -38,7 +38,7 @@ const Login = () => {
         <div className='flex justify-center max-w-lg mb-6'>
           <Link
             to='/auth/forgot-password'
-            className='text-sm text-neutral-500 hover:text-neutral-900'
+            className='text-sm text-neutral-500 hover:text-neutral-900 hover:underline underline-offset-4'
           >
             Forgot password?
           </Link>
@@ -51,7 +51,7 @@ const Login = () => {
         <div className='flex justify-center mb-6'>
           <p className='text-sm text-neutral-500'>
             Don't have an account?{' '}
-            <Link to='/auth/register' className='hover:text-neutral-900 font-medium'>
+            <Link to='/auth/register' className='hover:text-neutral-900 font-medium hover:underline underline-offset-4'>
               Sign Up
             </Link>
           </p>
