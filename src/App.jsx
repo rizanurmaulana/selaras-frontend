@@ -4,6 +4,11 @@ import Register from './pages/auth/Register';
 import ForgotPassword from './pages/auth/ForgotPassword';
 import ResetPassword from './pages/auth/ResetPassword';
 import Home from './pages/Home';
+import ProductOrders from './pages/profile/Orders';
+import ProductWishlist from './pages/profile/Wishlist';
+import ProfileAddress from './pages/profile/Address';
+import ChangePassword from './pages/profile/ChangePassword';
+import Account from './pages/profile/Account';
 
 function App() {
   return (
@@ -15,6 +20,14 @@ function App() {
         <Route path='register' element={<Register />} />
         <Route path='forgot-password' element={<ForgotPassword />} />
         <Route path='reset-password' element={<ResetPassword />} />
+      </Route>
+      <Route path='/profile/*'>
+        <Route index element={<ProductOrders />} />
+        <Route path='orders' element={<ProductOrders />} />
+        <Route path='wishlist' element={<ProductWishlist />} />
+        <Route path='address' element={<ProfileAddress />} />
+        <Route path='change-password' element={<ChangePassword />} />
+        <Route path='account' element={<Account />} />
       </Route>
     </Routes>
   );
