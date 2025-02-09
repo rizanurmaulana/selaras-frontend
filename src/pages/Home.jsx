@@ -1,5 +1,6 @@
 import ProductCard from '@/components/common/ProductCard';
 import Footer from '@/components/layout/Footer';
+import Navbar from '@/components/layout/Navbar';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Award, Bus, ShieldCheck } from 'lucide-react';
 import React from 'react';
@@ -83,6 +84,8 @@ const featuredList = [
 const Home = () => {
   return (
     <>
+      <Navbar />
+
       <section className='bg-neutral-100 mb-20'>
         <div className='max-w-6xl mx-auto px-4 lg:px-0'>
           <div className='flex justify-between min-h-[440px]'>
