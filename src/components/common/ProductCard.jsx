@@ -2,7 +2,7 @@ import React from 'react';
 
 const ProductCard = ({ image, name, status, price }) => {
   return (
-    <div className='p-2'>
+    <div className='p-2 bg-white'>
       <div className='h-80 rounded-sm overflow-hidden mb-6'>
         <img src={image} alt='' className='aspect-2/3 object-cover' />
       </div>

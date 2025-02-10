@@ -9,6 +9,7 @@ import ProductWishlist from './pages/profile/Wishlist';
 import ProfileAddress from './pages/profile/Address';
 import ChangePassword from './pages/profile/ChangePassword';
 import Account from './pages/profile/Account';
+import Products from './pages/products/Products';
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
         <Route path='register' element={<Register />} />
         <Route path='forgot-password' element={<ForgotPassword />} />
         <Route path='reset-password' element={<ResetPassword />} />
+      </Route>
+      <Route path='/products/*'>
+        <Route index element={<Products />} />
       </Route>
       <Route path='/profile/*'>
         <Route index element={<ProductOrders />} />
