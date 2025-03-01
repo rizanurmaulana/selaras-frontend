@@ -30,25 +30,25 @@ const categories = [
   {
     id: 1,
     name: 'Kebaya',
-    path: '/category/kebaya',
+    path: '/product?category=kebaya',
     image: '/images/category-1.jpg',
   },
   {
     id: 2,
     name: 'Pakaian Adat',
-    path: '/category/pakaian-adat',
+    path: '/product?category=pakaian-adat',
     image: '/images/category-2.jpg',
   },
   {
     id: 3,
     name: 'Jas',
-    path: '/category/jas',
+    path: '/product?category=jas',
     image: '/images/category-3.jpg',
   },
   {
     id: 4,
     name: 'Make Up',
-    path: '/category/makeup',
+    path: '/product?category=makeup',
     image: '/images/category-4.jpg',
   },
 ];
@@ -56,6 +56,7 @@ const categories = [
 const kebayaList = [
   {
     id: 1,
+    url: '/product/kebaya-1',
     image: '/images/catalogs/kebaya-1.jpg',
     name: 'Kebaya Wanita Modern',
     status: 'Tersedia',
@@ -63,6 +64,7 @@ const kebayaList = [
   },
   {
     id: 2,
+    url: '/product/kebaya-2',
     image: '/images/catalogs/kebaya-2.jpg',
     name: 'Kebaya Wanita Modern',
     status: 'Tersedia',
@@ -70,6 +72,7 @@ const kebayaList = [
   },
   {
     id: 3,
+    url: '/product/kebaya-3',
     image: '/images/catalogs/kebaya-3.jpg',
     name: 'Kebaya Wanita Modern',
     status: 'Tersedia',
@@ -77,6 +80,7 @@ const kebayaList = [
   },
   {
     id: 4,
+    url: '/product/kebaya-4',
     image: '/images/catalogs/kebaya-4.jpg',
     name: 'Kebaya Wanita Modern',
     status: 'Tersedia',
@@ -87,6 +91,7 @@ const kebayaList = [
 const jasList = [
   {
     id: 1,
+    url: '/product/jas-1',
     image: '/images/catalogs/jas-1.jpg',
     name: 'Jas Hitam Pria',
     status: 'Tersedia',
@@ -94,6 +99,7 @@ const jasList = [
   },
   {
     id: 2,
+    url: '/product/jas-2',
     image: '/images/catalogs/jas-2.jpg',
     name: 'Jas Pengantin Pria',
     status: 'Tersedia',
@@ -101,6 +107,7 @@ const jasList = [
   },
   {
     id: 3,
+    url: '/product/jas-3',
     image: '/images/catalogs/jas-3.jpg',
     name: 'Jas Hitam Anak',
     status: 'Tersedia',
@@ -108,6 +115,7 @@ const jasList = [
   },
   {
     id: 4,
+    url: '/product/jas-4',
     image: '/images/catalogs/jas-4.jpg',
     name: 'Jas Formal Pria',
     status: 'Tersedia',
@@ -118,6 +126,7 @@ const jasList = [
 const makeupList = [
   {
     id: 1,
+    url: '/product/makeup-1',
     image: '/images/catalogs/makeup-1.jpg',
     name: 'Make Up Karakter Pria',
     status: 'Tersedia',
@@ -125,6 +134,7 @@ const makeupList = [
   },
   {
     id: 2,
+    url: '/product/makeup-2',
     image: '/images/catalogs/makeup-2.JPG',
     name: 'Make Up Wisuda Wanita',
     status: 'Tersedia',
@@ -132,6 +142,7 @@ const makeupList = [
   },
   {
     id: 3,
+    url: '/product/makeup-3',
     image: '/images/catalogs/makeup-3.JPG',
     name: 'Make Up Arabian Look',
     status: 'Tersedia',
@@ -139,6 +150,7 @@ const makeupList = [
   },
   {
     id: 4,
+    url: '/product/makeup-4',
     image: '/images/catalogs/makeup-4.jpg',
     name: 'Make Up Wanita',
     status: 'Tersedia',
@@ -149,6 +161,7 @@ const makeupList = [
 const kostumList = [
   {
     id: 1,
+    url: '/product/kostum-1',
     image: '/images/catalogs/kostum-1.jpg',
     name: 'Pakaian Karakter Profesi',
     status: 'Tersedia',
@@ -156,6 +169,7 @@ const kostumList = [
   },
   {
     id: 2,
+    url: '/product/kostum-2',
     image: '/images/catalogs/kostum-2.jpg',
     name: 'Pakaiain Adat Anak',
     status: 'Tersedia',
@@ -163,6 +177,7 @@ const kostumList = [
   },
   {
     id: 3,
+    url: '/product/kostum-3',
     image: '/images/catalogs/kostum-3.jpg',
     name: 'Pakaian Karakter Profesi',
     status: 'Tersedia',
@@ -170,6 +185,7 @@ const kostumList = [
   },
   {
     id: 4,
+    url: '/product/kostum-4',
     image: '/images/catalogs/kostum-4.jpg',
     name: 'Pakaian Tari Anak',
     status: 'Tersedia',
@@ -200,19 +216,19 @@ const Home = () => {
                 asChild
                 className='w-fit bg-sky-800 hover:bg-sky-700 px-6'
               >
-                <Link href='/'>
+                <Link to='/product'>
                   Lihat Katalog <ArrowRight />
                 </Link>
               </Button>
             </div>
             <div className='flex items-end'>
-              <img src='/images/hero-image.png' alt='' />
+              <img src='/images/home-image.png' alt='Hero Image' />
             </div>
           </div>
         </div>
       </section>
 
-      <section className='max-w-6xl mx-auto px-4 lg:px-0 mb-20'>
+      <section className='max-w-6xl mx-auto px-4 sm:px-12 xl:px-0 mb-20'>
         <div className='text-center mb-10'>
           <h2 className='text-2xl font-bold'>Pilihan Kategori Populer</h2>
         </div>
@@ -236,9 +252,9 @@ const Home = () => {
         </div>
       </section>
 
-      <section className='max-w-6xl mx-auto px-4 lg:px-0 mb-20'>
+      <section className='max-w-6xl mx-auto px-4 sm:px-12 xl:px-0 mb-20'>
         <div className='flex justify-center items-center'>
-          <Link to='/products'>
+          <Link to='/product'>
             <img
               src='/images/banners/banner-1.png'
               alt='banner'
@@ -248,7 +264,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className='max-w-6xl mx-auto px-4 lg:px-0 mb-20'>
+      <section className='max-w-6xl mx-auto px-4 sm:px-12 xl:px-0 mb-20'>
         <div className='text-center mb-10'>
           <span className='text-xs text-neutral-400 mb-2 uppercase'>
             Kebaya
@@ -258,12 +274,8 @@ const Home = () => {
           </h2>
         </div>
         <div className='flex justify-between items-center gap-2 overflow-x-scroll'>
-          {kebayaList.map(({ id, image, name, status, price }) => (
-            <Link
-              to={`/catalogs/makeup-${id}`}
-              key={id}
-              className='w-full p-2 bg-white'
-            >
+          {kebayaList.map(({ id, url, image, name, status, price }) => (
+            <Link to={url} key={id} className='w-full p-2 bg-white'>
               <div className='h-52 md:h-60 xl:h-80 rounded-sm overflow-hidden mb-6 relative'>
                 <img
                   src={image}
@@ -292,9 +304,9 @@ const Home = () => {
         </div>
       </section>
 
-      <section className='max-w-6xl mx-auto px-4 lg:px-0 mb-20'>
+      <section className='max-w-6xl mx-auto px-4 sm:px-12 xl:px-0 mb-20'>
         <div className='flex justify-center items-center'>
-          <Link to='/products'>
+          <Link to='/product'>
             <img
               src='/images/banners/banner-2.png'
               alt='banner'
@@ -304,7 +316,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className='max-w-6xl mx-auto px-4 lg:px-0 mb-20'>
+      <section className='max-w-6xl mx-auto px-4 sm:px-12 xl:px-0 mb-20'>
         <div className='text-center mb-10'>
           <span className='text-xs text-neutral-400 mb-2 uppercase'>Jas</span>
           <h2 className='text-2xl font-bold'>
@@ -312,12 +324,8 @@ const Home = () => {
           </h2>
         </div>
         <div className='flex justify-between items-center gap-2 overflow-x-scroll'>
-          {jasList.map(({ id, image, name, status, price }) => (
-            <Link
-              to={`/catalogs/makeup-${id}`}
-              key={id}
-              className='w-full p-2 bg-white'
-            >
+          {jasList.map(({ id, url, image, name, status, price }) => (
+            <Link to={url} key={id} className='w-full p-2 bg-white'>
               <div className='h-52 md:h-60 xl:h-80 rounded-sm overflow-hidden mb-6 relative'>
                 <img
                   src={image}
@@ -346,9 +354,9 @@ const Home = () => {
         </div>
       </section>
 
-      <section className='max-w-6xl mx-auto px-4 lg:px-0 mb-20'>
+      <section className='max-w-6xl mx-auto px-4 sm:px-12 xl:px-0 mb-20'>
         <div className='flex justify-center items-center'>
-          <Link to='/products'>
+          <Link to='/product'>
             <img
               src='/images/banners/banner-3.png'
               alt='banner'
@@ -358,7 +366,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className='max-w-6xl mx-auto px-4 lg:px-0 mb-20'>
+      <section className='max-w-6xl mx-auto px-4 sm:px-12 xl:px-0 mb-20'>
         <div className='text-center mb-10'>
           <span className='text-xs text-neutral-400 mb-2 uppercase'>
             Make Up
@@ -369,12 +377,8 @@ const Home = () => {
           </h2>
         </div>
         <div className='flex justify-between items-center gap-2 overflow-x-scroll'>
-          {makeupList.map(({ id, image, name, status, price }) => (
-            <Link
-              to={`/catalogs/makeup-${id}`}
-              key={id}
-              className='w-full p-2 bg-white'
-            >
+          {makeupList.map(({ id, url, image, name, status, price }) => (
+            <Link to={url} key={id} className='w-full p-2 bg-white'>
               <div className='h-52 md:h-60 xl:h-80 rounded-sm overflow-hidden mb-6 relative'>
                 <img
                   src={image}
@@ -403,9 +407,9 @@ const Home = () => {
         </div>
       </section>
 
-      <section className='max-w-6xl mx-auto px-4 lg:px-0 mb-20'>
+      <section className='max-w-6xl mx-auto px-4 sm:px-12 xl:px-0 mb-20'>
         <div className='flex justify-center items-center'>
-          <Link to='/products'>
+          <Link to='/product'>
             <img
               src='/images/banners/banner-5.png'
               alt='banner'
@@ -415,7 +419,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className='max-w-6xl mx-auto px-4 lg:px-0 mb-20'>
+      <section className='max-w-6xl mx-auto px-4 sm:px-12 xl:px-0 mb-20'>
         <div className='text-center mb-10'>
           <span className='text-xs text-neutral-400 mb-2 uppercase'>
             Kostum Anak
@@ -425,12 +429,8 @@ const Home = () => {
           </h2>
         </div>
         <div className='flex justify-between items-center gap-2 overflow-x-scroll'>
-          {kostumList.map(({ id, image, name, status, price }) => (
-            <Link
-              to={`/catalogs/makeup-${id}`}
-              key={id}
-              className='w-full p-2 bg-white'
-            >
+          {kostumList.map(({ id, url, image, name, status, price }) => (
+            <Link to={url} key={id} className='w-full p-2 bg-white'>
               <div className='h-52 md:h-60 xl:h-80 rounded-sm overflow-hidden mb-6 relative'>
                 <img
                   src={image}
@@ -459,8 +459,8 @@ const Home = () => {
         </div>
       </section>
 
-      <section className='max-w-6xl mx-auto px-4 lg:px-0 mb-20'>
-        <div className='flex flex-col xl:flex-row justify-between items-center gap-8'>
+      <section className='max-w-6xl mx-auto px-4 sm:px-12 xl:px-0 mb-20'>
+        <div className='flex flex-col lg:flex-row justify-between items-center gap-8'>
           {servicesList.map((service, index) => (
             <div
               key={index}
