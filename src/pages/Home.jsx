@@ -4,6 +4,7 @@ import Footer from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Award, Bus, Heart, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router';
+import ProductCard from '@/components/common/ProductCard';
 
 const servicesList = [
   {
@@ -56,139 +57,139 @@ const categories = [
 const kebayaList = [
   {
     id: 1,
-    url: '/product/kebaya-1',
     image: '/images/catalogs/kebaya-1.jpg',
     name: 'Kebaya Wanita Modern',
     status: 'Tersedia',
+    isFavorite: false,
     price: 200000,
   },
   {
     id: 2,
-    url: '/product/kebaya-2',
     image: '/images/catalogs/kebaya-2.jpg',
     name: 'Kebaya Wanita Modern',
     status: 'Tersedia',
+    isFavorite: false,
     price: 200000,
   },
   {
     id: 3,
-    url: '/product/kebaya-3',
     image: '/images/catalogs/kebaya-3.jpg',
     name: 'Kebaya Wanita Modern',
     status: 'Tersedia',
+    isFavorite: false,
     price: 200000,
   },
   {
     id: 4,
-    url: '/product/kebaya-4',
     image: '/images/catalogs/kebaya-4.jpg',
     name: 'Kebaya Wanita Modern',
     status: 'Tersedia',
+    isFavorite: false,
     price: 200000,
   },
 ];
 
 const jasList = [
   {
-    id: 1,
-    url: '/product/jas-1',
+    id: 5,
     image: '/images/catalogs/jas-1.jpg',
     name: 'Jas Hitam Pria',
     status: 'Tersedia',
+    isFavorite: false,
     price: 200000,
   },
   {
-    id: 2,
-    url: '/product/jas-2',
+    id: 6,
     image: '/images/catalogs/jas-2.jpg',
     name: 'Jas Pengantin Pria',
     status: 'Tersedia',
+    isFavorite: false,
     price: 200000,
   },
   {
-    id: 3,
-    url: '/product/jas-3',
+    id: 7,
     image: '/images/catalogs/jas-3.jpg',
     name: 'Jas Hitam Anak',
     status: 'Tersedia',
+    isFavorite: false,
     price: 125000,
   },
   {
-    id: 4,
-    url: '/product/jas-4',
+    id: 8,
     image: '/images/catalogs/jas-4.jpg',
     name: 'Jas Formal Pria',
     status: 'Tersedia',
+    isFavorite: false,
     price: 150000,
   },
 ];
 
 const makeupList = [
   {
-    id: 1,
-    url: '/product/makeup-1',
+    id: 9,
     image: '/images/catalogs/makeup-1.jpg',
     name: 'Make Up Karakter Pria',
     status: 'Tersedia',
+    isFavorite: false,
     price: 200000,
   },
   {
-    id: 2,
-    url: '/product/makeup-2',
+    id: 10,
     image: '/images/catalogs/makeup-2.JPG',
     name: 'Make Up Wisuda Wanita',
     status: 'Tersedia',
+    isFavorite: false,
     price: 200000,
   },
   {
-    id: 3,
-    url: '/product/makeup-3',
+    id: 11,
     image: '/images/catalogs/makeup-3.JPG',
     name: 'Make Up Arabian Look',
     status: 'Tersedia',
+    isFavorite: false,
     price: 125000,
   },
   {
-    id: 4,
-    url: '/product/makeup-4',
+    id: 12,
     image: '/images/catalogs/makeup-4.jpg',
     name: 'Make Up Wanita',
     status: 'Tersedia',
+    isFavorite: false,
     price: 150000,
   },
 ];
 
 const kostumList = [
   {
-    id: 1,
-    url: '/product/kostum-1',
+    id: 13,
     image: '/images/catalogs/kostum-1.jpg',
     name: 'Pakaian Karakter Profesi',
     status: 'Tersedia',
+    isFavorite: false,
     price: 50000,
   },
   {
-    id: 2,
-    url: '/product/kostum-2',
+    id: 14,
     image: '/images/catalogs/kostum-2.jpg',
     name: 'Pakaiain Adat Anak',
     status: 'Tersedia',
+    isFavorite: false,
     price: 70000,
   },
   {
-    id: 3,
-    url: '/product/kostum-3',
+    id: 15,
     image: '/images/catalogs/kostum-3.jpg',
     name: 'Pakaian Karakter Profesi',
     status: 'Tersedia',
+    isFavorite: false,
     price: 50000,
   },
   {
-    id: 4,
-    url: '/product/kostum-4',
+    id: 16,
     image: '/images/catalogs/kostum-4.jpg',
     name: 'Pakaian Tari Anak',
     status: 'Tersedia',
+    isFavorite: false,
     price: 80000,
   },
 ];
@@ -274,32 +275,12 @@ const Home = () => {
           </h2>
         </div>
         <div className='flex justify-between items-center gap-2 overflow-x-scroll'>
-          {kebayaList.map(({ id, url, image, name, status, price }) => (
-            <Link to={url} key={id} className='w-full p-2 bg-white'>
-              <div className='h-52 md:h-60 xl:h-80 rounded-sm overflow-hidden mb-6 relative'>
-                <img
-                  src={image}
-                  alt={name}
-                  className='aspect-2/3 object-cover w-full h-full'
-                />
-                <Button className='bg-white hover:bg-red-500 text-black hover:text-white flex justify-center items-center rounded-full absolute top-2 right-2 h-10 w-10 z-[1]'>
-                  <Heart />
-                </Button>
-              </div>
-              <h5 className='font-medium mb-3 truncate'>{name}</h5>
-              <div className='flex items-center gap-4'>
-                <span className='px-4 py-[2px] uppercase text-xs font-medium bg-white border rounded-full'>
-                  {status}
-                </span>
-                <p className='text-sm text-neutral-600'>
-                  {price.toLocaleString('id-ID', {
-                    style: 'currency',
-                    currency: 'IDR',
-                    minimumFractionDigits: 0,
-                  })}
-                </p>
-              </div>
-            </Link>
+          {kebayaList.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              widthCard='w-full'
+            />
           ))}
         </div>
       </section>
@@ -324,32 +305,12 @@ const Home = () => {
           </h2>
         </div>
         <div className='flex justify-between items-center gap-2 overflow-x-scroll'>
-          {jasList.map(({ id, url, image, name, status, price }) => (
-            <Link to={url} key={id} className='w-full p-2 bg-white'>
-              <div className='h-52 md:h-60 xl:h-80 rounded-sm overflow-hidden mb-6 relative'>
-                <img
-                  src={image}
-                  alt={name}
-                  className='aspect-2/3 object-cover w-full h-full'
-                />
-                <Button className='bg-white hover:bg-red-500 text-black hover:text-white flex justify-center items-center rounded-full absolute top-2 right-2 h-10 w-10 z-[1]'>
-                  <Heart />
-                </Button>
-              </div>
-              <h5 className='font-medium mb-3 truncate'>{name}</h5>
-              <div className='flex items-center gap-4'>
-                <span className='px-4 py-[2px] uppercase text-xs font-medium bg-white border rounded-full'>
-                  {status}
-                </span>
-                <p className='text-sm text-neutral-600'>
-                  {price.toLocaleString('id-ID', {
-                    style: 'currency',
-                    currency: 'IDR',
-                    minimumFractionDigits: 0,
-                  })}
-                </p>
-              </div>
-            </Link>
+          {jasList.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              widthCard='w-full'
+            />
           ))}
         </div>
       </section>
@@ -429,32 +390,12 @@ const Home = () => {
           </h2>
         </div>
         <div className='flex justify-between items-center gap-2 overflow-x-scroll'>
-          {kostumList.map(({ id, url, image, name, status, price }) => (
-            <Link to={url} key={id} className='w-full p-2 bg-white'>
-              <div className='h-52 md:h-60 xl:h-80 rounded-sm overflow-hidden mb-6 relative'>
-                <img
-                  src={image}
-                  alt={name}
-                  className='aspect-2/3 object-cover w-full h-full'
-                />
-                <Button className='bg-white hover:bg-red-500 text-black hover:text-white flex justify-center items-center rounded-full absolute top-2 right-2 h-10 w-10 z-[1]'>
-                  <Heart />
-                </Button>
-              </div>
-              <h5 className='font-medium mb-3 truncate'>{name}</h5>
-              <div className='flex items-center gap-4'>
-                <span className='px-4 py-[2px] uppercase text-xs font-medium bg-white border rounded-full'>
-                  {status}
-                </span>
-                <p className='text-sm text-neutral-600'>
-                  {price.toLocaleString('id-ID', {
-                    style: 'currency',
-                    currency: 'IDR',
-                    minimumFractionDigits: 0,
-                  })}
-                </p>
-              </div>
-            </Link>
+          {kostumList.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              widthCard='w-full'
+            />
           ))}
         </div>
       </section>

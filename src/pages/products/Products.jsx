@@ -1,7 +1,6 @@
-import ProductCard from '@/components/common/ProductCard';
+import React from 'react';
 import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
-import { Checkbox } from '@/components/ui/checkbox';
 import {
   Pagination,
   PaginationContent,
@@ -11,62 +10,105 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from '@/components/ui/pagination';
-import React from 'react';
+import ProductCard from '@/components/common/ProductCard';
+import { Checkbox } from '@/components/ui/checkbox';
 
 const productList = [
   {
-    image: '/images/kebaya-1.jpg',
+    id: 1,
+    image: '/images/catalogs/kebaya-1.jpg',
     name: 'Kebaya Wanita Modern',
     status: 'Tersedia',
+    isFavorite: false,
     price: 200000,
   },
   {
-    image: '/images/kebaya-2.jpg',
+    id: 2,
+    image: '/images/catalogs/kebaya-2.jpg',
     name: 'Kebaya Wanita Modern',
     status: 'Tersedia',
+    isFavorite: false,
     price: 235000,
   },
   {
-    image: '/images/kebaya-3.jpg',
+    id: 3,
+    image: '/images/catalogs/kebaya-3.jpg',
     name: 'Kebaya Wanita Modern',
     status: 'Tersedia',
+    isFavorite: false,
     price: 250000,
   },
   {
-    image: '/images/kebaya-4.jpg',
-    name: 'Kebaya Wanita Modern',
+    id: 4,
+    image: '/images/catalogs/jas-1.jpg',
+    name: 'Jas Formal Pria',
     status: 'Tersedia',
-    price: 250000,
+    isFavorite: false,
+    price: 270000,
   },
   {
-    image: '/images/kebaya-1.jpg',
-    name: 'Kebaya Wanita Modern',
+    id: 5,
+    image: '/images/catalogs/jas-2.jpg',
+    name: 'Jas Formal Pria',
     status: 'Tersedia',
-    price: 200000,
+    isFavorite: false,
+    price: 220000,
   },
   {
-    image: '/images/kebaya-2.jpg',
-    name: 'Kebaya Wanita Modern',
+    id: 6,
+    image: '/images/catalogs/jas-3.jpg',
+    name: 'Jas Formal Anak',
     status: 'Tersedia',
-    price: 235000,
+    isFavorite: false,
+    price: 320000,
   },
   {
-    image: '/images/kebaya-3.jpg',
-    name: 'Kebaya Wanita Modern',
+    id: 7,
+    image: '/images/catalogs/makeup-1.jpg',
+    name: 'Make Up Karakter Pria',
     status: 'Tersedia',
-    price: 250000,
+    isFavorite: false,
+    price: 280000,
   },
   {
-    image: '/images/kebaya-4.jpg',
-    name: 'Kebaya Wanita Modern',
+    id: 8,
+    image: '/images/catalogs/makeup-2.JPG',
+    name: 'Make Up Wisuda Wanita',
     status: 'Tersedia',
-    price: 250000,
+    isFavorite: false,
+    price: 260000,
   },
   {
-    image: '/images/kebaya-1.jpg',
-    name: 'Kebaya Wanita Modern',
+    id: 9,
+    image: '/images/catalogs/makeup-3.JPG',
+    name: 'Make Up Arabian Look',
     status: 'Tersedia',
-    price: 200000,
+    isFavorite: false,
+    price: 300000,
+  },
+  {
+    id: 10,
+    image: '/images/catalogs/kostum-1.jpg',
+    name: 'Kostum Profesi Anak',
+    status: 'Tersedia',
+    isFavorite: false,
+    price: 290000,
+  },
+  {
+    id: 11,
+    image: '/images/catalogs/kostum-2.jpg',
+    name: 'Pakaian Adat Anak',
+    status: 'Tersedia',
+    isFavorite: false,
+    price: 350000,
+  },
+  {
+    id: 12,
+    image: '/images/catalogs/kostum-3.jpg',
+    name: 'Kostum Profesi Anak',
+    status: 'Tersedia',
+    isFavorite: false,
+    price: 310000,
   },
 ];
 
@@ -75,13 +117,13 @@ const Products = () => {
     <>
       <Navbar />
       <section className='max-w-6xl mx-auto my-8'>
-        <div className='flex gap-x-8'>
+        <div className='flex flex-wrap'>
           <div className='w-1/5'>
             <div className='border rounded-md py-4 px-3'>
               <h4 className='text-sm font-medium mb-4'>Kategori</h4>
               <div className='flex flex-col divide-y'>
                 <div className='flex items-center py-3 gap-x-2'>
-                  <Checkbox id='kebaya' className='border-neutral-300'  />
+                  <Checkbox id='kebaya' className='border-neutral-300' />
                   <label
                     htmlFor='kebaya'
                     className='text-sm text-neutral-600 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
@@ -90,7 +132,7 @@ const Products = () => {
                   </label>
                 </div>
                 <div className='flex items-center py-3 gap-x-2'>
-                  <Checkbox id='kebaya' className='border-neutral-300'  />
+                  <Checkbox id='kebaya' className='border-neutral-300' />
                   <label
                     htmlFor='kebaya'
                     className='text-sm text-neutral-600 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
@@ -99,7 +141,7 @@ const Products = () => {
                   </label>
                 </div>
                 <div className='flex items-center py-3 gap-x-2'>
-                  <Checkbox id='kebaya' className='border-neutral-300'  />
+                  <Checkbox id='kebaya' className='border-neutral-300' />
                   <label
                     htmlFor='kebaya'
                     className='text-sm text-neutral-600 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
@@ -108,7 +150,7 @@ const Products = () => {
                   </label>
                 </div>
                 <div className='flex items-center py-3 gap-x-2'>
-                  <Checkbox id='kebaya' className='border-neutral-300'  />
+                  <Checkbox id='kebaya' className='border-neutral-300' />
                   <label
                     htmlFor='kebaya'
                     className='text-sm text-neutral-600 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
@@ -117,7 +159,7 @@ const Products = () => {
                   </label>
                 </div>
                 <div className='flex items-center py-3 gap-x-2'>
-                  <Checkbox id='kebaya' className='border-neutral-300'  />
+                  <Checkbox id='kebaya' className='border-neutral-300' />
                   <label
                     htmlFor='kebaya'
                     className='text-sm text-neutral-600 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
@@ -138,14 +180,12 @@ const Products = () => {
             </div>
           </div>
           <div className='w-4/5'>
-            <div className='grid grid-cols-3 gap-x-6 gap-y-8'>
-              {productList.map((product, index) => (
+            <div className='grid grid-cols-3 gap-x-2 gap-y-8'>
+              {productList.map((product) => (
                 <ProductCard
-                  key={index}
-                  image={product.image}
-                  name={product.name}
-                  status={product.status}
-                  price={product.price}
+                  key={product.id}
+                  product={product}
+                  widthCard='w-full'
                 />
               ))}
             </div>
@@ -178,7 +218,6 @@ const Products = () => {
           </div>
         </div>
       </section>
-
       <Footer />
     </>
   );
