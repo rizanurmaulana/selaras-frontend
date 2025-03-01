@@ -5,15 +5,15 @@ const Footer = () => {
 
   return (
     <footer className='bg-neutral-100'>
-      <div className='max-w-6xl mx-auto px-4 lg:px-0 py-16'>
-        <div className='grid grid-cols-1 xl:grid-cols-2 gap-4'>
+      <div className='max-w-6xl mx-auto px-4 xl:px-0 py-16'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
           <div className='mb-5 xl:mb-0'>
             <img
               src='/logo/selaras-brand.png'
               alt='Logo Selaras'
               className='mb-5'
             />
-            <p className='text-sm text-neutral-700 w-96'>
+            <p className='text-sm text-neutral-700 sm:w-80 lg:w-96'>
               Selaras adalah Platform Sewa Busana dan Jasa Rias yang memudahkan
               penyewaan pakaian dan rias profesional, serta memberdayakan UMKM
               lokal di Kabupaten Kuningan.

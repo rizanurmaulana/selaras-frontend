@@ -23,7 +23,7 @@ function App() {
         <Route path='forgot-password' element={<ForgotPassword />} />
         <Route path='reset-password' element={<ResetPassword />} />
       </Route>
-      <Route path='/products/*'>
+      <Route path='/catalog/*'>
         <Route index element={<Products />} />
         <Route path=':id' element={<ProductDetails />} />
       </Route>
