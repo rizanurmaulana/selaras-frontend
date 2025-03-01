@@ -4,27 +4,26 @@ import { CircleUserRound, Menu, ShoppingCart } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 
 const navItems = [
-  { label: 'Beranda', path: '/' },
-  { label: 'Katalog', path: '/catalog' },
-  { label: 'Tentang Kami', path: '/about' },
-  { label: 'Kontak', path: '/contact' },
+  { label: 'Beranda', url: '/' },
+  { label: 'Katalog', url: '/product' },
+  { label: 'Tentang Kami', url: '/about' },
+  { label: 'Kontak', url: '/contact' },
 ];
 
 const NavLinks = ({ className }) => (
   <ul className={`flex md:items-center gap-8 ${className}`}>
-    {navItems.map(({ label, path }) => (
+    {navItems.map(({ label, url }) => (
       <li
-        key={path}
+        key={url}
         className='text-sm text-neutral-600 hover:text-neutral-900'
       >
-        <Link to={path}>{label}</Link>
+        <Link to={url}>{label}</Link>
       </li>
     ))}
   </ul>
