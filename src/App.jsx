@@ -11,11 +11,13 @@ import ChangePassword from './pages/profile/ChangePassword';
 import Account from './pages/profile/Account';
 import Products from './pages/products/Products';
 import ProductDetails from './pages/products/ProductDetails';
+import About from './pages/about/About';
 
 function App() {
   return (
     <Routes>
       <Route index element={<Home />} />
+      <Route path='/about' element={<About />} />
       <Route path='/auth/*'>
         <Route index element={<Login />} />
         <Route path='login' element={<Login />} />
