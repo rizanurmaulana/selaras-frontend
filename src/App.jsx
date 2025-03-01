@@ -1,4 +1,4 @@
-import { Route, Router, Routes } from 'react-router';
+import { Route, Routes } from 'react-router';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import ForgotPassword from './pages/auth/ForgotPassword';
@@ -10,6 +10,7 @@ import ProfileAddress from './pages/profile/Address';
 import ChangePassword from './pages/profile/ChangePassword';
 import Account from './pages/profile/Account';
 import Products from './pages/products/Products';
+import ProductDetails from './pages/products/ProductDetails';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       </Route>
       <Route path='/products/*'>
         <Route index element={<Products />} />
+        <Route path=':id' element={<ProductDetails />} />
       </Route>
       <Route path='/profile/*'>
         <Route index element={<ProductOrders />} />

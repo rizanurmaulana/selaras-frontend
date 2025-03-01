@@ -6,7 +6,7 @@ const Navbar = () => {
   const [cart, setCart] = useState(0);
 
   return (
-    <header className='sticky top-0 w-full bg-white'>
+    <header className='sticky top-0 w-full bg-white z-[99]'>
       <div className='max-w-6xl mx-auto flex justify-between items-center w-full px-4 lg:px-0 min-h-20'>
         <div className='flex items-center gap-28'>
           <Link to='/'>
