@@ -338,32 +338,12 @@ const Home = () => {
           </h2>
         </div>
         <div className='flex justify-between items-center gap-2 overflow-x-scroll'>
-          {makeupList.map(({ id, url, image, name, status, price }) => (
-            <Link to={url} key={id} className='w-full p-2 bg-white'>
-              <div className='h-52 md:h-60 xl:h-80 rounded-sm overflow-hidden mb-6 relative'>
-                <img
-                  src={image}
-                  alt={name}
-                  className='aspect-2/3 object-cover w-full h-full'
-                />
-                <Button className='bg-white hover:bg-red-500 text-black hover:text-white flex justify-center items-center rounded-full absolute top-2 right-2 h-10 w-10 z-[1]'>
-                  <Heart />
-                </Button>
-              </div>
-              <h5 className='font-medium mb-3 truncate'>{name}</h5>
-              <div className='flex items-center gap-4'>
-                <span className='px-4 py-[2px] uppercase text-xs font-medium bg-white border rounded-full'>
-                  {status}
-                </span>
-                <p className='text-sm text-neutral-600'>
-                  {price.toLocaleString('id-ID', {
-                    style: 'currency',
-                    currency: 'IDR',
-                    minimumFractionDigits: 0,
-                  })}
-                </p>
-              </div>
-            </Link>
+          {makeupList.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              widthCard='w-full'
+            />
           ))}
         </div>
       </section>
