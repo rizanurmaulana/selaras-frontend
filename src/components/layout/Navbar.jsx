@@ -85,7 +85,7 @@ const Navbar = () => {
 
           {/* Cart & User Icons */}
           <CartIcon cartCount={cart} />
-          <Link to='/login'>
+          <Link to='/auth/login'>
             <CircleUserRound className='text-neutral-600 hover:text-neutral-900 h-6' />
           </Link>
         </div>
