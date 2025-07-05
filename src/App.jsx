@@ -12,6 +12,7 @@ import Account from './pages/profile/Account';
 import Products from './pages/products/Products';
 import ProductDetails from './pages/products/ProductDetails';
 import About from './pages/about/About';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -37,6 +38,8 @@ function App() {
         <Route path='change-password' element={<ChangePassword />} />
         <Route path='account' element={<Account />} />
       </Route>
+
+      <Route path='*' element={<NotFound />} />
     </Routes>
   );
 }
